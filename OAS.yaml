@@ -109,7 +109,7 @@ components:
           type: object
           properties:
             BSN:
-              type: integer
+              type: string
             VOORLETTERS:
               type: string
             ACHTERNAAM:
@@ -119,7 +119,7 @@ components:
             STRAATNAAM:
               type: string
             HUISNUMMER:
-              type: integer
+              type: string
             POSTCODE:
               type: string
             WOONPLAATS:
@@ -129,11 +129,11 @@ components:
             EMAILADRES:
               type: string
             GEMEENTECODE:
-              type: integer
+              type: string
             STRAATNAAM_NIEUW:
               type: string
             HUISNUMMER_NIEUW:
-              type: integer
+              type: string
             HUISNUMMERTOEVOEGING_NIEUW:
               type: string
             WOONPLAATS_NIEUW:
@@ -143,11 +143,11 @@ components:
             verhuisdatum:
               type: string
             AANTAL_PERS_NIEUW_ADRES:
-              type: integer
+              type: string
             WIJZE_BEWONING:
               type: string
             BSN_HOOFDBEWONER:
-              type: integer
+              type: string
     Metadata:
       title: Metadata
       x-stoplight:
