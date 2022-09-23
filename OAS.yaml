@@ -129,4 +129,9 @@ components:
         'ns2:Omschrijving':
           type: string
         'ns2:Inhoud':
-          type: string
+          type: object
+          properties:
+            '@d6p1:contentType':
+              type: string
+            '#':
+              type: string
