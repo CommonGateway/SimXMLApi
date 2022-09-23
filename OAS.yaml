@@ -65,8 +65,6 @@ components:
         id: chmsyzt2qzvgo
       type: object
       properties:
-        id:
-          type: integer
         stuurgegevens:
           $ref: '#/components/schemas/Stuurgegevens'
         Body:
@@ -108,8 +106,48 @@ components:
         MetaData:
           $ref: '#/components/schemas/Metadata'
         Elementen:
-          type: array
-          items: {}
+          type: object
+          properties:
+            bsn:
+              type: integer
+            voorletters:
+              type: string
+            achternaam:
+              type: string
+            geslacht:
+              type: string
+            straatnaam:
+              type: string
+            huisnummer:
+              type: integer
+            postcode:
+              type: string
+            woonplaats:
+              type: string
+            telefoonnummer:
+              type: string
+            emailadres:
+              type: string
+            gemeentecode:
+              type: integer
+            straatnaam_nieuw:
+              type: string
+            huisnummer_nieuw:
+              type: integer
+            huisnummertoevoeging_nieuw:
+              type: string
+            woonplaats_nieuw:
+              type: string
+            postcode_nieuw:
+              type: string
+            verhuisdatum:
+              type: string
+            aantal_pers_nieuw_adres:
+              type: integer
+            wijze_bewoning:
+              type: string
+            bsn_hoofdbewoner:
+              type: integer
     Metadata:
       title: Metadata
       x-stoplight:
