@@ -110,8 +110,6 @@ components:
         Elementen:
           type: array
           items: {}
-        '':
-          type: string
     Metadata:
       title: Metadata
       x-stoplight:
@@ -126,11 +124,9 @@ components:
         id: k2l7299by14mx
       type: object
       properties:
-        id:
-          type: integer
-        Naam:
+        'ns2:Naam':
           type: string
-        Omschrijving:
+        'ns2:Omschrijving':
           type: string
-        Inhoud:
+        'ns2:Inhoud':
           type: string
