@@ -73,6 +73,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Bijlage'
+        zgwZaak:
+          type: string
+        zgwDocumenten:
+          type: array
+          items:
+            type: string
     Stuurgegevens:
       title: Stuurgegevens
       x-stoplight:
