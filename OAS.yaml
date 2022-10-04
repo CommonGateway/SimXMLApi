@@ -162,6 +162,8 @@ components:
       properties:
         id:
           type: string
+        INDIENER:
+          type: string
     Bijlage:
       title: Bijlage
       x-stoplight:
