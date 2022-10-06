@@ -146,7 +146,7 @@ components:
               type: string
             POSTCODE_NIEUW:
               type: string
-            verhuisdatum:
+            VERHUISDATUM:
               type: string
             AANTAL_PERS_NIEUW_ADRES:
               type: string
@@ -154,6 +154,25 @@ components:
               type: string
             BSN_HOOFDBEWONER:
               type: string
+            MEEVERHUIZENDE_GEZINSLEDEN:
+              type: array
+              items:
+                type: object
+                properties:
+                  BSN:
+                    type: string
+                  ROL:
+                    type: string
+                  VOORLETTERS:
+                    type: string
+                  VOORNAAM:
+                    type: string
+                  ACHTERNAAM:
+                    type: string
+                  GESLACHTSAANDUIDING:
+                    type: string
+                  GEBOORTEDATUM:
+                    type: string
     Metadata:
       title: Metadata
       x-stoplight:
