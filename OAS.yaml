@@ -181,3 +181,274 @@ components:
               type: string
             '#':
               type: string
+    IntraRelocation:
+      title: IntraRelocation
+      x-stoplight:
+        id: k1huigdqpv93q
+      type: object
+      description: A relocation in the same municipality
+      properties:
+        dossier:
+          type: object
+          properties:
+            dossierId:
+              type: string
+            description:
+              type: string
+            referenceIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+            type:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            status:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+                entryDateTime:
+                  type: string
+                endStatus:
+                  type: string
+            startDate:
+              type: string
+            entryDateTime:
+              type: string
+        declarant:
+          type: object
+          properties:
+            bsn:
+              type: string
+            contactInformation:
+              type: object
+              properties:
+                email:
+                  type: string
+                telephoneNumber:
+                  type: string
+        newAddress:
+          type: object
+          properties:
+            street:
+              type: string
+            houseNumber:
+              type: integer
+            houseLetter:
+              type: string
+            houseNumberAddittion:
+              type: string
+            postalCode:
+              type: string
+            residence:
+              type: string
+            municipality:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            addressFunction:
+              type: string
+            numberOfResidents:
+              type: integer
+            destinationCurrentResidents:
+              type: string
+            liveIn:
+              type: object
+              properties:
+                liveInApplicable:
+                  type: boolean
+                consent:
+                  type: string
+                consenter:
+                  type: object
+                  properties:
+                    bsn:
+                      type: string
+                    contactInformation:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                        telephoneNumber:
+                          type: string
+            mainOccupant:
+              type: object
+              properties:
+                bsn:
+                  type: string
+                contactInformation:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    telephoneNumber:
+                      type: string
+        relocators:
+          type: array
+          items:
+            type: object
+            properties:
+              bsn:
+                type: string
+              contactInformation:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  telephoneNumber:
+                    type: string
+              declarationType:
+                type: string
+    InterRelocation:
+      title: InterRelocation
+      x-stoplight:
+        id: 589m5aeriauxh
+      type: object
+      properties:
+        dossier:
+          type: object
+          properties:
+            dossierId:
+              type: string
+            description:
+              type: string
+            referenceIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+            type:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            status:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+                entryDateTime:
+                  type: string
+                endStatus:
+                  type: string
+            startDate:
+              type: string
+            entryDateTime:
+              type: string
+        declarant:
+          type: object
+          properties:
+            bsn:
+              type: string
+            contactInformation:
+              type: object
+              properties:
+                email:
+                  type: string
+                telephoneNumber:
+                  type: string
+        newAddress:
+          type: object
+          properties:
+            street:
+              type: string
+            houseNumber:
+              type: integer
+            houseLetter:
+              type: string
+            houseNumberAddittion:
+              type: string
+            postalCode:
+              type: string
+            residence:
+              type: string
+            municipality:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            addressFunction:
+              type: string
+            numberOfResidents:
+              type: integer
+            destinationCurrentResidents:
+              type: string
+            liveIn:
+              type: object
+              properties:
+                liveInApplicable:
+                  type: boolean
+                consent:
+                  type: string
+                consenter:
+                  type: object
+                  properties:
+                    bsn:
+                      type: string
+                    contactInformation:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                        telephoneNumber:
+                          type: string
+            mainOccupant:
+              type: object
+              properties:
+                bsn:
+                  type: string
+                contactInformation:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    telephoneNumber:
+                      type: string
+        previousMunicipality:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        relocators:
+          type: array
+          items:
+            type: object
+            properties:
+              bsn:
+                type: string
+              contactInformation:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  telephoneNumber:
+                    type: string
+              declarationType:
+                type: string
+      description: A relocation to a different municipality
