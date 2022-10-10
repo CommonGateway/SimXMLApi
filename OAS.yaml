@@ -319,8 +319,19 @@ components:
         relocators:
           type: array
           items:
-            type: array
-            items: {}
+            type: object
+            properties:
+              bsn:
+                type: string
+              contactInformation:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  telephoneNumber:
+                    type: string
+              declarationType:
+                type: string
     InterRelocation:
       title: InterRelocation
       x-stoplight:
