@@ -1,1 +1,475 @@
-OAS.yaml
+openapi: 3.1.0
+x-stoplight:
+  id: 3zlaz714ownj1
+info:
+  title: SimXML
+  version: '1.0'
+  summary: SimXML api for translations
+  contact:
+    name: Conduction
+    url: conduction.nl
+    email: info@conduction.nl
+  license:
+    name: EUPL 1.2
+    identifier: EUPL-1.2
+  description: SimXML api for translations
+servers: []
+paths:
+  /simxml:
+    parameters: []
+    get:
+      summary: Get User Info by User ID
+      tags: []
+      responses:
+        '200':
+          description: User Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimXML'
+              examples:
+                Get User Alice Smith:
+                  value:
+                    id: 142
+                    firstName: Alice
+                    lastName: Smith
+                    email: alice.smith@gmail.com
+                    dateOfBirth: '1997-10-31'
+                    emailVerified: true
+                    signUpDate: '2019-08-24'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/SimXML'
+      operationId: get-users-userId
+      description: Retrieve the information of the user with the matching user ID.
+    post:
+      summary: ''
+      operationId: post-simxml
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimXML'
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/SimXML'
+components:
+  schemas:
+    SimXML:
+      title: SimXML
+      x-stoplight:
+        id: chmsyzt2qzvgo
+      type: object
+      properties:
+        stuurgegevens:
+          $ref: '#/components/schemas/Stuurgegevens'
+        Body:
+          $ref: '#/components/schemas/Body'
+        Bijlagen:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bijlage'
+        zgwZaak:
+          type: string
+        zgwDocumenten:
+          type: array
+          items:
+            type: string
+    Stuurgegevens:
+      title: Stuurgegevens
+      x-stoplight:
+        id: hlp7552ghfwlf
+      type: object
+      properties:
+        Zaaktype:
+          type: string
+        Versie:
+          type: string
+        Berichttype:
+          type: string
+        Zender:
+          type: string
+        Ontvanger:
+          type: string
+        Sleutel:
+          type: string
+        Datum:
+          type: string
+    Body:
+      title: Body
+      x-stoplight:
+        id: ipte2i3snddkd
+      type: object
+      properties:
+        FormulierId:
+          type: string
+        DatumVerzending:
+          type: string
+        MetaData:
+          $ref: '#/components/schemas/Metadata'
+        Elementen:
+          type: object
+          properties:
+            BSN:
+              type: string
+            VOORLETTERS:
+              type: string
+            ACHTERNAAM:
+              type: string
+            GESLACHT:
+              type: string
+            STRAATNAAM:
+              type: string
+            HUISNUMMER:
+              type: string
+            POSTCODE:
+              type: string
+            WOONPLAATS:
+              type: string
+            TELEFOONNUMMER:
+              type: string
+            EMAILADRES:
+              type: string
+            GEMEENTECODE:
+              type: string
+            STRAATNAAM_NIEUW:
+              type: string
+            HUISNUMMER_NIEUW:
+              type: string
+            HUISNUMMERTOEVOEGING_NIEUW:
+              type: string
+            WOONPLAATS_NIEUW:
+              type: string
+            POSTCODE_NIEUW:
+              type: string
+            VERHUISDATUM:
+              type: string
+            AANTAL_PERS_NIEUW_ADRES:
+              type: string
+            WIJZE_BEWONING:
+              type: string
+            BSN_HOOFDBEWONER:
+              type: string
+            MEEVERHUIZENDE_GEZINSLEDEN:
+              type: array
+              items:
+                type: object
+                properties:
+                  BSN:
+                    type: string
+                  ROL:
+                    type: string
+                  VOORLETTERS:
+                    type: string
+                  VOORNAAM:
+                    type: string
+                  ACHTERNAAM:
+                    type: string
+                  GESLACHTSAANDUIDING:
+                    type: string
+                  GEBOORTEDATUM:
+                    type: string
+    Metadata:
+      title: Metadata
+      x-stoplight:
+        id: nshh02t4uuvrf
+      type: object
+      properties:
+        id:
+          type: string
+        INDIENER:
+          type: string
+    Bijlage:
+      title: Bijlage
+      x-stoplight:
+        id: k2l7299by14mx
+      type: object
+      properties:
+        'ns2:Naam':
+          type: string
+        'ns2:Omschrijving':
+          type: string
+        'ns2:Inhoud':
+          type: object
+          properties:
+            '@d6p1:contentType':
+              type: string
+            '#':
+              type: string
+    IntraRelocation:
+      title: IntraRelocation
+      x-stoplight:
+        id: k1huigdqpv93q
+      type: object
+      description: A relocation in the same municipality
+      properties:
+        dossier:
+          type: object
+          properties:
+            dossierId:
+              type: string
+            description:
+              type: string
+            referenceIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+            type:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            status:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+                entryDateTime:
+                  type: string
+                endStatus:
+                  type: string
+            startDate:
+              type: string
+            entryDateTime:
+              type: string
+        declarant:
+          type: object
+          properties:
+            bsn:
+              type: string
+            contactInformation:
+              type: object
+              properties:
+                email:
+                  type: string
+                telephoneNumber:
+                  type: string
+        newAddress:
+          type: object
+          properties:
+            street:
+              type: string
+            houseNumber:
+              type: integer
+            houseLetter:
+              type: string
+            houseNumberAddition:
+              type: string
+            postalCode:
+              type: string
+            residence:
+              type: string
+            municipality:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            addressFunction:
+              type: string
+            numberOfResidents:
+              type: integer
+            destinationCurrentResidents:
+              type: string
+            liveIn:
+              type: object
+              properties:
+                liveInApplicable:
+                  type: boolean
+                consent:
+                  type: string
+                consenter:
+                  type: object
+                  properties:
+                    bsn:
+                      type: string
+                    contactInformation:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                        telephoneNumber:
+                          type: string
+            mainOccupant:
+              type: object
+              properties:
+                bsn:
+                  type: string
+                contactInformation:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    telephoneNumber:
+                      type: string
+        relocators:
+          type: array
+          items:
+            type: array
+            items: {}
+            type: object
+            properties:
+              bsn:
+                type: string
+              contactInformation:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  telephoneNumber:
+                    type: string
+              declarationType:
+                type: string
+    InterRelocation:
+      title: InterRelocation
+      x-stoplight:
+        id: 589m5aeriauxh
+      type: object
+      description: A relocation to a different municipality
+      properties:
+        dossier:
+          type: object
+          properties:
+            dossierId:
+              type: string
+            description:
+              type: string
+            referenceIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+            type:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            status:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+                entryDateTime:
+                  type: string
+                endStatus:
+                  type: string
+            startDate:
+              type: string
+            entryDateTime:
+              type: string
+        declarant:
+          type: object
+          properties:
+            bsn:
+              type: string
+            contactInformation:
+              type: object
+              properties:
+                email:
+                  type: string
+                telephoneNumber:
+                  type: string
+        newAddress:
+          type: object
+          properties:
+            street:
+              type: string
+            houseNumber:
+              type: integer
+            houseLetter:
+              type: string
+            houseNumberAddition:
+              type: string
+            postalCode:
+              type: string
+            residence:
+              type: string
+            municipality:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            addressFunction:
+              type: string
+            numberOfResidents:
+              type: integer
+            destinationCurrentResidents:
+              type: string
+            liveIn:
+              type: object
+              properties:
+                liveInApplicable:
+                  type: boolean
+                consent:
+                  type: string
+                consenter:
+                  type: object
+                  properties:
+                    bsn:
+                      type: string
+                    contactInformation:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                        telephoneNumber:
+                          type: string
+            mainOccupant:
+              type: object
+              properties:
+                bsn:
+                  type: string
+                contactInformation:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                    telephoneNumber:
+                      type: string
+        previousMunicipality:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        relocators:
+          type: array
+          items:
+            type: object
+            properties:
+              bsn:
+                type: string
+              contactInformation:
+                type: object
+                properties:
+                  email:
+                    type: string
+                  telephoneNumber:
+                    type: string
+              declarationType:
+                type: string
