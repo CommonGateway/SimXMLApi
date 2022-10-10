@@ -155,24 +155,7 @@ components:
             BSN_HOOFDBEWONER:
               type: string
             MEEVERHUIZENDE_GEZINSLEDEN:
-              type: array
-              items:
-                type: object
-                properties:
-                  BSN:
-                    type: string
-                  ROL:
-                    type: string
-                  VOORLETTERS:
-                    type: string
-                  VOORNAAM:
-                    type: string
-                  ACHTERNAAM:
-                    type: string
-                  GESLACHTSAANDUIDING:
-                    type: string
-                  GEBOORTEDATUM:
-                    type: string
+              type: string
     Metadata:
       title: Metadata
       x-stoplight:
@@ -319,19 +302,8 @@ components:
         relocators:
           type: array
           items:
-            type: object
-            properties:
-              bsn:
-                type: string
-              contactInformation:
-                type: object
-                properties:
-                  email:
-                    type: string
-                  telephoneNumber:
-                    type: string
-              declarationType:
-                type: string
+            type: array
+            items: {}
     InterRelocation:
       title: InterRelocation
       x-stoplight:
