@@ -383,12 +383,7 @@ components:
             bsn:
               type: string
             contactInformation:
-              type: object
-              properties:
-                email:
-                  type: string
-                telephoneNumber:
-                  type: string
+              $ref: '#/components/schemas/ContactInformation'
         newAddress:
           type: object
           properties:
@@ -430,24 +425,14 @@ components:
                     bsn:
                       type: string
                     contactInformation:
-                      type: object
-                      properties:
-                        email:
-                          type: string
-                        telephoneNumber:
-                          type: string
+                      $ref: '#/components/schemas/ContactInformation'
             mainOccupant:
               type: object
               properties:
                 bsn:
                   type: string
                 contactInformation:
-                  type: object
-                  properties:
-                    email:
-                      type: string
-                    telephoneNumber:
-                      type: string
+                  $ref: '#/components/schemas/ContactInformation'
         previousMunicipality:
           type: object
           properties:
@@ -463,11 +448,167 @@ components:
               bsn:
                 type: string
               contactInformation:
-                type: object
-                properties:
-                  email:
-                    type: string
-                  telephoneNumber:
-                    type: string
+                $ref: '#/components/schemas/ContactInformation'
               declarationType:
                 type: string
+    Commitment:
+      title: Commitment
+      x-stoplight:
+        id: vtb1gpeahkdbx
+      type: object
+      properties:
+        dossier:
+          type: object
+          properties:
+            dossierId:
+              type: string
+            description:
+              type: string
+            referenceIds:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  description:
+                    type: string
+            type:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            status:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+                entryDateTime:
+                  type: string
+                endStatus:
+                  type: string
+            startDate:
+              type: string
+            entryDateTime:
+              type: string
+        partner1:
+          $ref: '#/components/schemas/Partner'
+        partner2:
+          $ref: '#/components/schemas/Partner'
+        planning:
+          type: object
+          properties:
+            commitmentType:
+              type: string
+            commitmentDateTime:
+              type: string
+            intentionDate:
+              type: string
+            remarks:
+              type: string
+        location:
+          type: object
+          properties:
+            name:
+              type: string
+            aliases:
+              type: array
+              items: {}
+            options:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  value:
+                    type: string
+                  description:
+                    type: string
+                  type:
+                    type: string
+                  aliases:
+                    type: array
+                    items: {}
+        officials:
+          type: object
+          properties:
+            preferences:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  contactInformation:
+                    $ref: '#/components/schemas/ContactInformation'
+                  aliases:
+                    type: array
+                    items: {}
+            assigned:
+              type: object
+              properties:
+                name:
+                  type: string
+                contactInformation:
+                  $ref: '#/components/schemas/ContactInformation'
+                aliases:
+                  type: array
+                  items: {}
+        witnesses:
+          type: object
+          properties:
+            numberOfMunicipalWitnesses:
+              type: integer
+            chosen:
+              type: array
+              items:
+                type: object
+                properties:
+                  bsn:
+                    type: string
+                  firstname:
+                    type: string
+                  prefix:
+                    type: string
+                  lastname:
+                    type: string
+                  birthdate:
+                    type: integer
+                  remarks:
+                    type: string
+    Partner:
+      title: Partner
+      x-stoplight:
+        id: 47dyjopepond0
+      type: object
+      properties:
+        bsn:
+          type: string
+        contactInformation:
+          $ref: '#/components/schemas/ContactInformation'
+        nameAfterCommitment:
+          type: object
+          properties:
+            nameUseType:
+              type: string
+            title:
+              type: string
+            prefix:
+              type: string
+            lastname:
+              type: string
+    ContactInformation:
+      title: ContactInformation
+      x-stoplight:
+        id: j1zkgz8stovvl
+      type: object
+      properties:
+        email:
+          type: string
+        telephoneNumber:
+          type: string
