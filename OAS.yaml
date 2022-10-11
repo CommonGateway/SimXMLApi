@@ -79,6 +79,13 @@ components:
           type: array
           items:
             type: string
+        parameters:
+          type: object
+          properties:
+            mutatiesoort:
+              type: string
+            indicatorOvername:
+              type: string
     Stuurgegevens:
       title: Stuurgegevens
       x-stoplight:
@@ -98,6 +105,12 @@ components:
         Sleutel:
           type: string
         Datum:
+          type: string
+        berichtcode:
+          type: string
+        referentienummer:
+          type: string
+        entiteittype:
           type: string
     Body:
       title: Body
@@ -208,249 +221,15 @@ components:
       description: A relocation in the same municipality
       properties:
         dossier:
-          type: object
-          properties:
-            dossierId:
-              type: string
-            description:
-              type: string
-            referenceIds:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  description:
-                    type: string
-            type:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-            status:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-                entryDateTime:
-                  type: string
-                endStatus:
-                  type: string
-            startDate:
-              type: string
-            entryDateTime:
-              type: string
+          $ref: '#/components/schemas/Dossier'
         declarant:
-          type: object
-          properties:
-            bsn:
-              type: string
-            contactInformation:
-              type: object
-              properties:
-                email:
-                  type: string
-                telephoneNumber:
-                  type: string
+          $ref: '#/components/schemas/Declarant'
         newAddress:
-          type: object
-          properties:
-            street:
-              type: string
-            houseNumber:
-              type: integer
-            houseLetter:
-              type: string
-            houseNumberAddition:
-              type: string
-            postalCode:
-              type: string
-            residence:
-              type: string
-            municipality:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-            addressFunction:
-              type: string
-            numberOfResidents:
-              type: integer
-            destinationCurrentResidents:
-              type: string
-            liveIn:
-              type: object
-              properties:
-                liveInApplicable:
-                  type: boolean
-                consent:
-                  type: string
-                consenter:
-                  type: object
-                  properties:
-                    bsn:
-                      type: string
-                    contactInformation:
-                      type: object
-                      properties:
-                        email:
-                          type: string
-                        telephoneNumber:
-                          type: string
-            mainOccupant:
-              type: object
-              properties:
-                bsn:
-                  type: string
-                contactInformation:
-                  type: object
-                  properties:
-                    email:
-                      type: string
-                    telephoneNumber:
-                      type: string
+          $ref: '#/components/schemas/NewAddress'
         relocators:
           type: array
           items:
-            type: object
-            properties:
-              bsn:
-                type: string
-              contactInformation:
-                type: object
-                properties:
-                  email:
-                    type: string
-                  telephoneNumber:
-                    type: string
-              declarationType:
-                type: string
-    InterRelocation:
-      title: InterRelocation
-      x-stoplight:
-        id: 589m5aeriauxh
-      type: object
-      description: A relocation to a different municipality
-      properties:
-        dossier:
-          type: object
-          properties:
-            dossierId:
-              type: string
-            description:
-              type: string
-            referenceIds:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  description:
-                    type: string
-            type:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-            status:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-                entryDateTime:
-                  type: string
-                endStatus:
-                  type: string
-            startDate:
-              type: string
-            entryDateTime:
-              type: string
-        declarant:
-          type: object
-          properties:
-            bsn:
-              type: string
-            contactInformation:
-              $ref: '#/components/schemas/ContactInformation'
-        newAddress:
-          type: object
-          properties:
-            street:
-              type: string
-            houseNumber:
-              type: integer
-            houseLetter:
-              type: string
-            houseNumberAddition:
-              type: string
-            postalCode:
-              type: string
-            residence:
-              type: string
-            municipality:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-            addressFunction:
-              type: string
-            numberOfResidents:
-              type: integer
-            destinationCurrentResidents:
-              type: string
-            liveIn:
-              type: object
-              properties:
-                liveInApplicable:
-                  type: boolean
-                consent:
-                  type: string
-                consenter:
-                  type: object
-                  properties:
-                    bsn:
-                      type: string
-                    contactInformation:
-                      $ref: '#/components/schemas/ContactInformation'
-            mainOccupant:
-              type: object
-              properties:
-                bsn:
-                  type: string
-                contactInformation:
-                  $ref: '#/components/schemas/ContactInformation'
-        previousMunicipality:
-          type: object
-          properties:
-            code:
-              type: string
-            description:
-              type: string
-        relocators:
-          type: array
-          items:
-            type: object
-            properties:
-              bsn:
-                type: string
-              contactInformation:
-                $ref: '#/components/schemas/ContactInformation'
-              declarationType:
-                type: string
+            $ref: '#/components/schemas/Relocators'
     Commitment:
       title: Commitment
       x-stoplight:
@@ -458,43 +237,7 @@ components:
       type: object
       properties:
         dossier:
-          type: object
-          properties:
-            dossierId:
-              type: string
-            description:
-              type: string
-            referenceIds:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  description:
-                    type: string
-            type:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-            status:
-              type: object
-              properties:
-                code:
-                  type: string
-                description:
-                  type: string
-                entryDateTime:
-                  type: string
-                endStatus:
-                  type: string
-            startDate:
-              type: string
-            entryDateTime:
-              type: string
+          $ref: '#/components/schemas/Dossier'
         partner1:
           $ref: '#/components/schemas/Partner'
         partner2:
@@ -581,6 +324,30 @@ components:
                     type: integer
                   remarks:
                     type: string
+    InterRelocation:
+      title: InterRelocation
+      x-stoplight:
+        id: 589m5aeriauxh
+      type: object
+      description: A relocation to a different municipality
+      properties:
+        dossier:
+          $ref: '#/components/schemas/Dossier'
+        declarant:
+          $ref: '#/components/schemas/Declarant'
+        newAddress:
+          $ref: '#/components/schemas/NewAddress'
+        previousMunicipality:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        relocators:
+          type: array
+          items:
+            $ref: '#/components/schemas/Relocators'
     Partner:
       title: Partner
       x-stoplight:
@@ -612,3 +379,352 @@ components:
           type: string
         telephoneNumber:
           type: string
+    Death:
+      title: Death
+      x-stoplight:
+        id: 486cnp2x7lg1p
+      type: object
+      properties:
+        dossier:
+          $ref: '#/components/schemas/Dossier'
+        declarant:
+          $ref: '#/components/schemas/Declarant'
+        deceased:
+          type: object
+          properties:
+            bsn:
+              type: string
+              pattern: '^[0-9]*$'
+            contactInformation:
+              $ref: '#/components/schemas/ContactInformation'
+            firstname:
+              type: string
+            prefix:
+              type: string
+            titlePredicate:
+              type: string
+            lastname:
+              type: string
+            birthdate:
+              type: integer
+            birthplace:
+              type: string
+            birthcountry:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+        deathByNaturalCauses:
+          type: boolean
+        municipality:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        dateOfDeath:
+          type: string
+          format: date
+        timeOfDeath:
+          type: string
+          description: '[0-9]{1,2}:[0-9]{2}'
+          pattern: '[0-9]{1,2}:[0-9]{2}'
+        funeralServices:
+          type: object
+          properties:
+            serviceType:
+              type: string
+              enum:
+                - BURIAL_CREMATION
+                - DISSECTION
+            date:
+              type: string
+              format: date
+            time:
+              type: string
+              description: 'HH:mm'
+            outsideBenelux:
+              type: boolean
+            causeOfDeathType:
+              type: string
+              enum:
+                - NATURAL_CAUSES
+                - NON_CONTAGIOUS_DISEASE
+            countryOfDestination:
+              type: object
+              properties:
+                code:
+                  type: string
+                description:
+                  type: string
+            placeOfDestination:
+              type: string
+            via:
+              type: string
+            transportation:
+              type: string
+        correspondence:
+          type: object
+          properties:
+            communicationType:
+              type: string
+              enum:
+                - EMAIL
+                - POST
+            organization:
+              type: string
+            departement:
+              type: string
+            name:
+              type: string
+            email:
+              type: string
+            telephoneNumber:
+              type: string
+            street:
+              type: string
+            houseNumber:
+              type: integer
+            houseNumberLetter:
+              type: string
+            houseNumberAddition:
+              type: string
+            postalCode:
+              type: string
+            residence:
+              type: string
+        extracts:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              description:
+                type: string
+              amount:
+                type: integer
+    Dossier:
+      title: Dossier
+      x-stoplight:
+        id: sfx5fkesvalyq
+      type: object
+      properties:
+        dossierId:
+          type: string
+        description:
+          type: string
+        referenceIds:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              description:
+                type: string
+        type:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        status:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+            entryDateTime:
+              type: string
+              format: date-time
+            endStatus:
+              type: boolean
+        startDate:
+          type: string
+          format: date
+        entryDateTime:
+          type: string
+          format: date-time
+    Declarant:
+      title: Declarant
+      x-stoplight:
+        id: aa6gwd79ds0zw
+      type: object
+      properties:
+        bsn:
+          type: string
+          maxLength: 9
+          pattern: '^[0-9]*$'
+        contactInformation:
+          $ref: '#/components/schemas/ContactInformation'
+    Birth:
+      title: Birth
+      x-stoplight:
+        id: g8uhku7vbflmg
+      type: object
+      properties:
+        dossier:
+          $ref: '#/components/schemas/Dossier'
+        qualificationForDeclaringType:
+          type: string
+          enum:
+            - UNDERTAKER
+            - FATHER
+            - DUO_MOTHER
+            - PRESENT_AT_BIRTH
+            - BORN_IN_HOME
+            - BORN_IN_INSTITUTION
+            - MOTHER
+            - MAYOR
+            - KNOWLEDGE_CARRIER
+        declarant:
+          $ref: '#/components/schemas/Declarant'
+        mother:
+          type: object
+          properties:
+            bsn:
+              type: string
+              pattern: '^[0-9]*$'
+            contactInformation:
+              $ref: '#/components/schemas/ContactInformation'
+        fatherDuoMother:
+          type: object
+          properties:
+            bsn:
+              type: string
+              pattern: '^[0-9]*$'
+            contactInformation:
+              $ref: '#/components/schemas/ContactInformation'
+        children:
+          type: array
+          items:
+            type: object
+            properties:
+              firstname:
+                type: string
+              gender:
+                type: string
+                enum:
+                  - MAN
+                  - WOMAN
+                  - UNKNOWN
+              birthDateTime:
+                type: string
+                format: date-time
+        nameSelection:
+          type: object
+          properties:
+            lastname:
+              type: string
+            prefix:
+              type: string
+            titlePredicate:
+              type: string
+              enum:
+                - B
+                - BS
+                - G
+                - GI
+                - H
+                - HI
+                - JH
+                - JV
+                - M
+                - MI
+                - P
+                - PS
+                - R
+    NewAddress:
+      title: NewAddress
+      x-stoplight:
+        id: peql1fbd51pmx
+      type: object
+      properties:
+        street:
+          type: string
+        houseNumber:
+          type: integer
+        houseLetter:
+          type: string
+        houseNumberAddition:
+          type: string
+        postalCode:
+          type: string
+        residence:
+          type: string
+        municipality:
+          type: object
+          properties:
+            code:
+              type: string
+            description:
+              type: string
+        addressFunction:
+          type: string
+          enum:
+            - LIVING_ADDRESS
+            - MAILING_ADDRESS
+        numberOfResidents:
+          type: integer
+        destinationCurrentResidents:
+          type: string
+        liveIn:
+          $ref: '#/components/schemas/liveIn'
+        mainOccupant:
+          type: object
+          properties:
+            bsn:
+              type: string
+            contactInformation:
+              $ref: '#/components/schemas/ContactInformation'
+    liveIn:
+      title: liveIn
+      x-stoplight:
+        id: uwo793999peba
+      type: object
+      properties:
+        liveInApplicable:
+          type: string
+        consent:
+          type: string
+          enum:
+            - NOT_APPLICABLE
+            - PENDING
+            - APPROVED
+            - DECLINED
+        consenter:
+          type: object
+          properties:
+            bsn:
+              type: string
+              pattern: '^[0-9]*$'
+            contactInformation:
+              $ref: '#/components/schemas/ContactInformation'
+    Relocators:
+      title: Relocators
+      x-stoplight:
+        id: 7pycr8953i0or
+      type: object
+      properties:
+        bsn:
+          type: string
+        contactInformation:
+          $ref: '#/components/schemas/ContactInformation'
+        declarationType:
+          type: string
+          enum:
+            - EX_OFFICIO
+            - MINISTERIAL_DECISION
+            - AUTHORITY_HOLDER
+            - HEAD_OF_AN_INSTITUTION
+            - REGISTERED
+            - ADULT_CHILD_LIVING_WITH_PARENTS
+            - ADULT_AUTHORIZED_REPRESENTATIVE
+            - PARTNER
+            - PARENT_LIVING_WITH_ADULT_CHILD
