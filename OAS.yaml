@@ -690,7 +690,7 @@ components:
       type: object
       properties:
         liveInApplicable:
-          type: string
+          type: boolean
         consent:
           type: string
           enum:
