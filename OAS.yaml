@@ -67,9 +67,9 @@ components:
       properties:
         stuurgegevens:
           $ref: '#/components/schemas/Stuurgegevens'
-        Body:
+        body:
           $ref: '#/components/schemas/Body'
-        Bijlagen:
+        bijlagen:
           type: array
           items:
             $ref: '#/components/schemas/Bijlage'
@@ -118,74 +118,14 @@ components:
         id: ipte2i3snddkd
       type: object
       properties:
-        FormulierId:
+        formulierId:
           type: string
-        DatumVerzending:
+        datumVerzending:
           type: string
-        MetaData:
+        metaData:
           $ref: '#/components/schemas/Metadata'
-        Elementen:
-          type: object
-          properties:
-            BSN:
-              type: string
-            VOORLETTERS:
-              type: string
-            ACHTERNAAM:
-              type: string
-            GESLACHT:
-              type: string
-            STRAATNAAM:
-              type: string
-            HUISNUMMER:
-              type: string
-            POSTCODE:
-              type: string
-            WOONPLAATS:
-              type: string
-            TELEFOONNUMMER:
-              type: string
-            EMAILADRES:
-              type: string
-            GEMEENTECODE:
-              type: string
-            STRAATNAAM_NIEUW:
-              type: string
-            HUISNUMMER_NIEUW:
-              type: string
-            HUISNUMMERTOEVOEGING_NIEUW:
-              type: string
-            WOONPLAATS_NIEUW:
-              type: string
-            POSTCODE_NIEUW:
-              type: string
-            VERHUISDATUM:
-              type: string
-            AANTAL_PERS_NIEUW_ADRES:
-              type: string
-            WIJZE_BEWONING:
-              type: string
-            BSN_HOOFDBEWONER:
-              type: string
-            MEEVERHUIZENDE_GEZINSLEDEN:
-              type: array
-              items:
-                type: object
-                properties:
-                  BSN:
-                    type: string
-                  ROL:
-                    type: string
-                  VOORLETTERS:
-                    type: string
-                  VOORNAAM:
-                    type: string
-                  ACHTERNAAM:
-                    type: string
-                  GESLACHTSAANDUIDING:
-                    type: string
-                  GEBOORTEDATUM:
-                    type: string
+        elementen:
+          $ref: '#/components/schemas/Elementen'
     Metadata:
       title: Metadata
       x-stoplight:
@@ -194,7 +134,25 @@ components:
       properties:
         id:
           type: string
-        INDIENER:
+        zaaktype:
+          type: string
+        zaakId:
+          type: string
+        code_kanaal:
+          type: string
+        code_medewerker:
+          type: string
+        indiener:
+          type: string
+        indienersoort:
+          type: string
+        betrouwbaarheid_identificatie:
+          type: string
+        betrouwbaarheid_naw:
+          type: string
+        oGone_orderId:
+          type: string
+        oGone_status:
           type: string
     Bijlage:
       title: Bijlage
@@ -728,3 +686,79 @@ components:
             - ADULT_AUTHORIZED_REPRESENTATIVE
             - PARTNER
             - PARENT_LIVING_WITH_ADULT_CHILD
+    Elementen:
+      title: Elementen
+      x-stoplight:
+        id: u7gn05yf9munv
+      type: object
+      properties:
+        bsn:
+          type: string
+        voorletters:
+          type: string
+        achternaam:
+          type: string
+        geslacht:
+          type: string
+        straatnaam:
+          type: string
+        huisnummer:
+          type: string
+        postcode:
+          type: string
+        woonplaats:
+          type: string
+        telefoonnummer:
+          type: string
+        emailadres:
+          type: string
+        gemeentecode:
+          type: string
+        straatNaam_nieuw:
+          type: string
+        huisnummer_nieuw:
+          type: string
+        huisnummertoevoeging_nieuw:
+          type: string
+        woonplaats_nieuw:
+          type: string
+        postcode_nieuw:
+          type: string
+        verhuisdatum:
+          type: string
+        aantal_pers_nieuw_adres:
+          type: string
+        wijze_bewoning:
+          type: string
+        bsn_hoofdbewoner:
+          type: string
+        meeverhuizende_gezinsleden:
+          type: object
+          properties:
+            bsn:
+              type: string
+            rol:
+              type: string
+            voorletters:
+              type: string
+            voornaam:
+              type: string
+            achternaam:
+              type: string
+            geslachtsaanduiding:
+              type: string
+            geboortedatum:
+              type: string
+        uittreksel:
+          type: object
+          properties:
+            bsn:
+              type: string
+            code:
+              type: string
+            omschrijving:
+              type: string
+        bsn_geheimhouding:
+          type: string
+        code_geheimhouding:
+          type: string
