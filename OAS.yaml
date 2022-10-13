@@ -160,11 +160,11 @@ components:
         id: k2l7299by14mx
       type: object
       properties:
-        'ns2:Naam':
+        Naam:
           type: string
-        'ns2:Omschrijving':
+        Omschrijving:
           type: string
-        'ns2:Inhoud':
+        Inhoud:
           type: object
           properties:
             '@d6p1:contentType':
@@ -696,6 +696,8 @@ components:
           type: string
         voorletters:
           type: string
+        voorvoegsel:
+          type: string
         achternaam:
           type: string
         geslacht:
@@ -714,9 +716,19 @@ components:
           type: string
         gemeentecode:
           type: string
-        straatNaam_nieuw:
+        adresregel1:
+          type: string
+        adresregel2:
+          type: string
+        landcode:
+          type: string
+        datumVertrek:
+          type: string
+        straatnaam_nieuw:
           type: string
         huisnummer_nieuw:
+          type: string
+        huisletter_nieuw:
           type: string
         huisnummertoevoeging_nieuw:
           type: string
@@ -732,33 +744,47 @@ components:
           type: string
         bsn_hoofdbewoner:
           type: string
-        meeverhuizende_gezinsleden:
-          type: object
-          properties:
-            bsn:
-              type: string
-            rol:
-              type: string
-            voorletters:
-              type: string
-            voornaam:
-              type: string
-            achternaam:
-              type: string
-            geslachtsaanduiding:
-              type: string
-            geboortedatum:
-              type: string
         uittreksel:
-          type: object
-          properties:
-            bsn:
-              type: string
-            code:
-              type: string
-            omschrijving:
-              type: string
+          type: array
+          items:
+            $ref: '#/components/schemas/Uittreksel'
         bsn_geheimhouding:
           type: string
         code_geheimhouding:
+          type: string
+        meeverhuizende_gezinsleden:
+          type: array
+          items:
+            $ref: '#/components/schemas/Meeverhuizers'
+    Uittreksel:
+      title: Uittreksel
+      x-stoplight:
+        id: rj5px9uptuxeq
+      type: object
+      properties:
+        bsn:
+          type: string
+        code:
+          type: string
+        omschrijving:
+          type: string
+    Meeverhuizers:
+      title: Meeverhuizers
+      x-stoplight:
+        id: uzke3kpeqtb87
+      type: object
+      properties:
+        bsn:
+          type: string
+        rol:
+          type: string
+        voorletters:
+          type: string
+        voornaam:
+          type: string
+        achternaam:
+          type: string
+        geslachtsaanduiding:
+          type: string
+        geboortedatum:
           type: string
