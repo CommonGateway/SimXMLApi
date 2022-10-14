@@ -92,19 +92,19 @@ components:
         id: hlp7552ghfwlf
       type: object
       properties:
-        Zaaktype:
+        zaaktype:
           type: string
-        Versie:
+        versie:
           type: string
-        Berichttype:
+        berichttype:
           type: string
-        Zender:
+        zender:
           type: string
-        Ontvanger:
+        ontvanger:
           type: string
-        Sleutel:
+        sleutel:
           type: string
-        Datum:
+        datum:
           type: string
         berichtcode:
           type: string
@@ -122,7 +122,7 @@ components:
           type: string
         datumVerzending:
           type: string
-        metaData:
+        metadata:
           $ref: '#/components/schemas/Metadata'
         elementen:
           $ref: '#/components/schemas/Elementen'
@@ -160,16 +160,16 @@ components:
         id: k2l7299by14mx
       type: object
       properties:
-        Naam:
+        naam:
           type: string
-        Omschrijving:
+        omschrijving:
           type: string
-        Inhoud:
+        inhoud:
           type: object
           properties:
-            '@d6p1:contentType':
+            contentType:
               type: string
-            '#':
+            content:
               type: string
     IntraRelocation:
       title: IntraRelocation
