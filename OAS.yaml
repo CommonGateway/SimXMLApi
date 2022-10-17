@@ -75,10 +75,11 @@ components:
             $ref: '#/components/schemas/Bijlage'
         zgwZaak:
           type: string
+          x-context: schema.conduction.nl/zaak
         zgwDocumenten:
           type: array
           items:
-            type: string
+            x-context: schema.conduction.nl/document
         parameters:
           type: object
           properties:
