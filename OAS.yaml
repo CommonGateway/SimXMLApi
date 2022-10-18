@@ -501,7 +501,7 @@ components:
               type: string
             entryDateTime:
               type: string
-          format: Y-m-d\TH:i:s
+              format: Y-m-d\TH:i:s
             endStatus:
               type: boolean
         startDate:
