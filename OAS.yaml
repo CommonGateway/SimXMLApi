@@ -501,15 +501,15 @@ components:
               type: string
             entryDateTime:
               type: string
-              format: date-time
+          format: Y-m-d\TH:i:s
             endStatus:
               type: boolean
         startDate:
           type: string
-          format: date
+          format: Y-m-d
         entryDateTime:
           type: string
-          format: date-time
+          format: Y-m-d\TH:i:s
     Declarant:
       title: Declarant
       x-stoplight:
@@ -575,7 +575,7 @@ components:
                   - UNKNOWN
               birthDateTime:
                 type: string
-                format: date-time
+                format: Y-m-d\TH:i:s
         nameSelection:
           type: object
           properties:
