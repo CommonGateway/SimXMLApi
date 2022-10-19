@@ -501,7 +501,7 @@ components:
               type: string
             entryDateTime:
               type: string
-              format: Y-m-d\TH:i:s
+              format: 'Y-m-d\TH:i:s'
             endStatus:
               type: boolean
         startDate:
@@ -509,7 +509,7 @@ components:
           format: Y-m-d
         entryDateTime:
           type: string
-          format: Y-m-d\TH:i:s
+          format: 'Y-m-d\TH:i:s'
     Declarant:
       title: Declarant
       x-stoplight:
@@ -575,7 +575,7 @@ components:
                   - UNKNOWN
               birthDateTime:
                 type: string
-                format: Y-m-d\TH:i:s
+                format: 'Y-m-d\TH:i:s'
         nameSelection:
           type: object
           properties:
@@ -788,4 +788,184 @@ components:
         geslachtsaanduiding:
           type: string
         geboortedatum:
+          type: string
+    SoapVrijBrp:
+      title: SoapVrijBrp
+      x-stoplight:
+        id: nvyy95ytwrpxk
+      type: object
+      properties:
+        uittrekselaanvraagRequest:
+          $ref: '#/components/schemas/UittrekselaanvraagRequest'
+        naamgebruikaanvraagRequest:
+          $ref: '#/components/schemas/NaamgebruikaanvraagRequest'
+        emigratieaanvraagRequest:
+          $ref: '#/components/schemas/EmigratieaanvraagRequest'
+        geheimhoudingaanvraagRequest:
+          $ref: '#/components/schemas/GeheimhoudingaanvraagRequest'
+    UittrekselaanvraagRequest:
+      title: UittrekselaanvraagRequest
+      x-stoplight:
+        id: c72407vck7c64
+      type: object
+      properties:
+        zaakgegevens:
+          $ref: '#/components/schemas/Zaakgegevens'
+        aanvraaggegevens:
+          $ref: '#/components/schemas/Aanvraaggegevens'
+        contactgegevens:
+          $ref: '#/components/schemas/Contactgegevens'
+    Zaakgegevens:
+      title: Zaakgegevens
+      x-stoplight:
+        id: 61cj0mhcu4ezf
+      type: object
+      properties:
+        zaakId:
+          type: string
+        bron:
+          type: string
+        leverancier:
+          type: string
+        medewerker:
+          type: string
+        datumAanvraag:
+          type: string
+        toelichting:
+          type: string
+    Aanvraaggegevens:
+      title: Aanvraaggegevens
+      x-stoplight:
+        id: nlygw82lu57wh
+      type: object
+      properties:
+        burgerservicenummerAanvrager:
+          type: string
+        uittrekselBetrokkenen:
+          type: array
+          items:
+            $ref: '#/components/schemas/UittrekselBetrokkene'
+        naamgebruikBetrokkenen:
+          type: array
+          items:
+            $ref: '#/components/schemas/NaamgebruikBetrokkenen'
+        emigratiedatum:
+          type: string
+        landcodeEmigratie:
+          type: string
+        adresBuitenland:
+          $ref: '#/components/schemas/AdresBuitenland'
+        meeEmigranten:
+          type: array
+          items:
+            $ref: '#/components/schemas/MeeEmigranten'
+        geheimhoudingBetrokkenen:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeheimhoudingBetrokkenen'
+    UittrekselBetrokkene:
+      title: UittrekselBetrokkene
+      x-stoplight:
+        id: d772wik01twib
+      type: object
+      properties:
+        burgerservicenummer:
+          type: string
+        uittrekselcode:
+          type: string
+        indicatieGratis:
+          type: string
+    Contactgegevens:
+      title: Contactgegevens
+      x-stoplight:
+        id: 5h384tvbbs2e0
+      type: object
+      properties:
+        emailadres:
+          type: string
+        telefoonnummerPrive:
+          type: string
+        telefoonnummerWerk:
+          type: string
+        telefoonnummerMobiel:
+          type: string
+    NaamgebruikaanvraagRequest:
+      title: NaamgebruikaanvraagRequest
+      x-stoplight:
+        id: 78zqs3x0vpnbd
+      type: object
+      properties:
+        zaakgegevens:
+          $ref: '#/components/schemas/Zaakgegevens'
+        aanvraaggegevens:
+          $ref: '#/components/schemas/Aanvraaggegevens'
+        contactgegevens:
+          $ref: '#/components/schemas/Contactgegevens'
+    NaamgebruikBetrokkenen:
+      title: NaamgebruikBetrokkenen
+      x-stoplight:
+        id: b8bab0sy57xat
+      type: object
+      properties:
+        burgerservicenummer:
+          type: string
+        codeNaamgebruik:
+          type: string
+    EmigratieaanvraagRequest:
+      title: EmigratieaanvraagRequest
+      x-stoplight:
+        id: wgxo96fm8xmx7
+      type: object
+      properties:
+        zaakgegevens:
+          $ref: '#/components/schemas/Zaakgegevens'
+        aanvraaggegevens:
+          $ref: '#/components/schemas/Aanvraaggegevens'
+        contactgegevens:
+          $ref: '#/components/schemas/Contactgegevens'
+    AdresBuitenland:
+      title: AdresBuitenland
+      x-stoplight:
+        id: ay8cultzjz7c1
+      type: object
+      properties:
+        adresBuitenland1:
+          type: string
+        adresBuitenland2:
+          type: string
+        adresBuitenland3:
+          type: string
+    MeeEmigranten:
+      title: MeeEmigranten
+      x-stoplight:
+        id: hdjl11cys334v
+      type: object
+      properties:
+        burgerservicenummer:
+          type: string
+        omschrijvingAangifte:
+          type: string
+        duur:
+          type: string
+    GeheimhoudingaanvraagRequest:
+      title: GeheimhoudingaanvraagRequest
+      x-stoplight:
+        id: fd4zvk4aj0mmd
+      type: object
+      properties:
+        zaakgegevens:
+          $ref: '#/components/schemas/Zaakgegevens'
+        aanvraaggegevens:
+          $ref: '#/components/schemas/Aanvraaggegevens'
+        contactgegevens:
+          $ref: '#/components/schemas/Contactgegevens'
+    GeheimhoudingBetrokkenen:
+      title: GeheimhoudingBetrokkenen
+      x-stoplight:
+        id: vy1nlquif5162
+      type: object
+      properties:
+        burgerservicenummer:
+          type: string
+        codeGeheimhouding:
           type: string
