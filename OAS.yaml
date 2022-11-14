@@ -969,3 +969,17 @@ components:
           type: string
         codeGeheimhouding:
           type: string
+    VrijBrpDossier:
+      title: VrijBrpDossier
+      x-stoplight:
+        id: wjxcv5ivhz9ql
+      type: object
+      properties:
+        title:
+          type: string
+        filename:
+          type: string
+        entryDateTime:
+          type: string
+        content:
+          type: string
